@@ -493,6 +493,3 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
-function setIsMobilebackgroundView(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
