@@ -1,10 +1,9 @@
 "use client";
 import { carouselItems } from '@/component-contents/carousel-slide/CarouselSlide';
-import { Box, Button, Container, Heading, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Text, VStack,Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import dynamic from "next/dynamic";
-const Images = dynamic(() => import("../Images"));
+
 
 interface CarouselItem {
   imageSrc: string;
@@ -39,8 +38,8 @@ const Carousel: React.FC = () => {
         <Box pos="relative" zIndex={0}>
           {carouselItems.map((item, index) => (
             <Box key={index} pos="relative" display={index === activeIndex ? 'block' : 'none'}>
-             <Images src={item.imageSrc} alt={"img"} 
-              layout='responsive' width={100}  height={100}/>
+             <Image src={item.imageSrc} alt={"img"} 
+              />
               <Box
                 pos="absolute" 
                 top="0" 
@@ -104,7 +103,7 @@ const Carousel: React.FC = () => {
               borderWidth="1px" color="white" 
               cursor="pointer" size={"0"} 
               _hover={{backgroundColor:"#01acf1"}}>
-              <Box><Images src={"./assets/Symbol2.svg"} alt={"img"} width={15} height={30} /></Box>
+              <Box><Image src={"./assets/Symbol2.svg"} alt={"img"} width={15} height={30} /></Box>
             </Button>
             <Button 
               onClick={handleNext} 
@@ -119,7 +118,7 @@ const Carousel: React.FC = () => {
               cursor="pointer" 
               size={"0"} 
               _hover={{backgroundColor:"#01acf1"}}>
-                <Box><Images src={"./assets/Symbol1.svg"} alt={"img"} width={15} height={30} /></Box>
+                <Box><Image src={"./assets/Symbol1.svg"} alt={"img"} width={15} height={30} /></Box>
             </Button>
         </Box>
       </Container>

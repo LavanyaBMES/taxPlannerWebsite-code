@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
     },
     {
       label: "Services",
-      href: "",
+      href: "#",
       subItems: [
         {
           id: 1,
@@ -263,8 +263,7 @@ const Navbar: React.FC = () => {
                   <Box key={index} mb="4">
                     {menuItem.subItems ? (
                       <Box>
-                        <Link
-                          href=""
+                        <Box
                           onClick={
                             menuItem.label === "Services"
                               ? handleServicesClick
@@ -280,7 +279,7 @@ const Navbar: React.FC = () => {
                               style={{ marginLeft: "3"}}
                             />
                           )}
-                        </Link>
+                        </Box>
                         {isServiceMenuOpen && menuItem.label === "Services" && (
                           <Box
                             mt="2"
