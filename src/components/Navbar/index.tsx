@@ -1,4 +1,4 @@
-
+"use client";
 import { useState, useEffect } from "react";
 import { Box, Container, Flex, Image, IconButton, Button } from "@chakra-ui/react";
 import { FaBars, FaAngleDown } from "react-icons/fa";
@@ -264,7 +264,7 @@ const Navbar: React.FC = () => {
                     {menuItem.subItems ? (
                       <Box>
                         <Link
-                          href="#"
+                          href=""
                           onClick={
                             menuItem.label === "Services"
                               ? handleServicesClick
