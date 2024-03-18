@@ -9,18 +9,13 @@ interface SubMenuItem {
   label: string;
   href: string;
   id: number;
+  subItems1?: MenuItem[];
 }
 
 interface MenuItem {
   label: string;
   href: string;
   subItems?: SubMenuItem[];
-}
-
-interface SubMenuItem {
-  label: string;
-  href: string;
-  subItems1?: MenuItem[];
 }
 
 const Navbar: React.FC = () => {
@@ -87,7 +82,7 @@ const Navbar: React.FC = () => {
     },
     {
       label: "Services",
-      href: "#",
+      href: "",
       subItems: [
         {
           id: 1,
