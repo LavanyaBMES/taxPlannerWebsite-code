@@ -384,8 +384,7 @@ const Navbar: React.FC = () => {
                       : undefined
                   }
                 >
-                  <Link
-                    href={menuItem.href}
+                  <Box
                     onClick={handleServiceLinkClick}
                     style={{ display: "flex", alignItems: "center" }}
                   >
@@ -397,7 +396,7 @@ const Navbar: React.FC = () => {
                         style={{ marginLeft: "3",marginTop:"4px" }}
                       />
                     )}
-                  </Link>
+                  </Box>
                   {menuItem.subItems &&
                     isServiceMenuOpen &&
                     menuItem.label === "Services" && (
