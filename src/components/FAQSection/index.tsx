@@ -218,9 +218,10 @@ const FAQSection: FC<ServicesProps> = ({
                             bgColor="#2D50D6"
                             color="#DFE4FD"
                             padding="16px 48px"
-                            py="1.5rem"
+                            py="1.8rem"
                             mt={3}
                             _hover={{bgColor:"#2D50D6",color:"#DFE4FD"}}
+                            _focus={{ boxShadow: "0 0 0 .25rem rgba(53, 94, 252, 0.25)" }}
                           >
                             <Link _hover={{textDecoration:"none"}} href={subdata?.href}>Read More</Link>
                           </Button>

@@ -54,7 +54,7 @@ const ContentWithPriceCard: React.FC<PriceCardProps> = ({ contents }) => {
                 {showCheckIcon && (
                   <Icon as={FaCheck} fontSize="48" color={'#01acf1'} mb={3} />
                 )}
-                <Heading mb={8} as={'h4'}>
+                <Heading mb={8} as={'h4'} mt="2">
                   {heading}
                 </Heading>
                 <Heading mb={5} display="inline-flex">
@@ -65,6 +65,7 @@ const ContentWithPriceCard: React.FC<PriceCardProps> = ({ contents }) => {
                 </Text>
                 <Button
                   _hover={{ bg: '#2d50d6', color: '#dfe4fd' }}
+                  _focus={{ boxShadow: "0 0 0 .25rem rgba(53, 94, 252, 0.25)" }}
                   bg="#2d50d6"
                   color="#dfe4fd"
                   padding={{ base: '24px 32px', lg: '30px 48px' }}

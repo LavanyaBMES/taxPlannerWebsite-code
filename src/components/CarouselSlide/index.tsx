@@ -81,7 +81,8 @@ const Carousel: React.FC = () => {
                        color="#dfe4fd" 
                        textDecoration= "none" 
                        borderRadius="8px"
-                       _hover={{backgroundColor: "#2D50D6"}}>
+                       _hover={{backgroundColor: "#2D50D6"}}
+                       _focus={{ boxShadow: "0 0 0 .25rem rgba(53, 94, 252, 0.25)" }}>
                        <Link href={item.link}>
                          <Text>{item.buttonname}</Text>
                        </Link>

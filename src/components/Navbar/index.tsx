@@ -198,14 +198,14 @@ const Navbar: React.FC = () => {
    
    <Box
       bg={(pathname === "/" && isMobilebackgroundView) || isScrolled ? "white" : "transparent"}
-      py="3"
+      py="1.5"
       position={isScrolled ? "fixed" : (pathname === "/" && isMobilebackgroundView) ? "relative" : "fixed"}
       width="100%"
       zIndex="998"
-      shadow={isScrolled ? "0px 8px 6px rgba(0, 0, 0, 0.1)" : "none"}
+      shadow={isScrolled ? "0px 8px 8px rgba(0, 0, 0, 0.1)" : "none"}
       
   >
-  <Container maxW="container.xxl" px={{base:2,lg:12}}>
+  <Container maxW="container.xxl" py={0} px={{base:2,lg:12}}>
         <Flex justify="space-between" alignItems="center">
           {/* Logo */}
           <Box>
@@ -366,7 +366,7 @@ const Navbar: React.FC = () => {
             display={{ base: "none", md: "none",lg:"block" }}
             fontFamily="'Open Sans', sans-serif"
           >
-            <Flex align="center" color="#555555" fontWeight="500">
+            <Flex align="center" color="#555555" fontWeight="500" cursor={"pointer"}>
               {menuItems.map((menuItem, index) => (
                 <Box
                   key={index}
@@ -387,6 +387,7 @@ const Navbar: React.FC = () => {
                   <Box
                     onClick={handleServiceLinkClick}
                     style={{ display: "flex", alignItems: "center" }}
+                    _hover={{color:"#01acf1"}}
                   >
                     {menuItem.label}
                     {menuItem.label === "Services" && (
@@ -425,7 +426,7 @@ const Navbar: React.FC = () => {
                             position={"relative"}
                           >
                             <Link href={subItem.href}>{subItem.label}</Link>
-                            <Box>
+                            <Box >
                               <FaAngleDown
                                 size={16}
                                 color="#555555"
@@ -477,6 +478,7 @@ const Navbar: React.FC = () => {
                 px="5"
                 bg="#2D50D6"
                 _hover={{bg:"#2D50D6"}}
+                _focus={{ boxShadow: "0 0 0 .25rem rgba(53, 94, 252, 0.25)" }}
               >
                 Login
               </Button>
