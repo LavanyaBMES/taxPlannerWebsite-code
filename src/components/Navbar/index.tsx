@@ -434,7 +434,7 @@ const Navbar: React.FC = () => {
                       <FaAngleDown
                         size={16}
                         color="#555555"
-                        style={{ marginLeft: "3px", marginTop: "2px", cursor: "pointer" }}
+                        style={{ marginLeft: "3px", marginTop: "2px" }}
                       />
                     </Flex>
                   )}
