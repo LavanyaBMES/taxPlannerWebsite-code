@@ -41,6 +41,12 @@ const Navbar: React.FC = () => {
     const handleResize = () => {
       setIsMobileView(window.innerWidth <= 991);
       setIsMobilebackgroundView(window.innerWidth <= 650);
+      setIsMobileMenuOpen(prevIsMobileMenuOpen => {
+        if (prevIsMobileMenuOpen && window.innerWidth > 991) {
+          return false;
+        }
+        return prevIsMobileMenuOpen;
+      });     
     };
     handleScroll();
     handleResize();
@@ -52,11 +58,21 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  const handleToggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  
+  const handleToggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    // Close the service menu if it's open
+    setIsServiceMenuOpen(false);
+    setSelectedSubMenu(null);
+  };
 
-  const handleToggleServiceMenu = () =>
+
+  const handleToggleServiceMenu = () => {
     setIsServiceMenuOpen(!isServiceMenuOpen);
+    if (!isServiceMenuOpen) {
+      setSelectedSubMenu(null);
+    }
+  };
+  
 
     const handleServicesMouseEnter = () => {
       if (!isMobileView) {
@@ -70,12 +86,15 @@ const Navbar: React.FC = () => {
       }
     };
 
-  const handleServicesClick = () => {
-    if (isMobileView) {
-      setIsServiceMenuOpen(!isServiceMenuOpen); // Toggle service submenu
-    }
-  };
-
+    const handleServicesClick = () => {
+      if (isMobileView) {
+        setIsServiceMenuOpen(prevState => !prevState); // Toggle service submenu
+        // Close the selected submenu only if the service menu is closed
+        if (!isServiceMenuOpen) {
+          setSelectedSubMenu(null);
+        }
+      }
+    };
   const handleSubMenuItemClick = (id: number) => {
     setSelectedSubMenu(id === selectedSubMenu ? null : id);
   };
